@@ -1,0 +1,259 @@
+header {
+  background-color: var(--button-bg-color);
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.Header-Top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header-Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1920px; /* Limit the max width */
+  padding: 0 20px;
+  margin: 0 auto; /* Center the content */
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  gap: 120px;
+}
+
+.menu-list li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.menu-list li:hover,
+li:focus {
+  color: orange;
+  width: auto;
+  height: auto;
+  border: 1px solid orange;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2em var(--hover);
+  padding: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: var(--link-hover-color);
+}
+
+.Search-Login {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* .Search 관련 CSS 수정 */
+.Search {
+  display: flex;
+  align-items: center;
+  background-color: var(--search-bg-color);
+  padding: 5px;
+  border-radius: 4px;
+  transition: width 0.3s ease; /* Smooth transition */
+  width: 180px; /* Initial width */
+  overflow: hidden;
+  position: relative; /* Positioning for absolute input */
+}
+
+.Search input {
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--text-color);
+  width: 0; /* Initially hidden */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.Search.active {
+  width: 380px; /* Expanded width when active */
+}
+
+.Search.active input {
+  width: 210px; /* Show input field when active */
+  /* border: 1px solid; */
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-top-left-radius: 4px;
+}
+
+.Search button {
+  padding: 5px 20px;
+  border: none;
+  background-color: var(--search-button-bg-color);
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.Search button:hover {
+  background-color: var(--search-button-hover-bg-color);
+}
+
+.LogReg {
+  display: flex;
+  gap: 10px;
+}
+
+.login,
+.Register {
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.login:hover,
+.Register:hover {
+  background-color: orange;
+}
+
+.dark-mode-toggle {
+  background-color: var(--search-button-bg-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--search-button-hover-bg-color);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .Header-Content {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 60px;
+  }
+
+  .menu-list {
+    display: none; /* Hide the menu by default on mobile */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-list.menu-active {
+    display: flex; /* Show the menu when menu-active class is applied */
+    position: absolute;
+    top: 180%;
+    left: 0;
+    transition: right 0.3s ease;
+  }
+
+  .menu-list li {
+    width: 100%;
+  }
+
+  .menu-list li .link {
+    display: block;
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  .Search-Login {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .Search {
+    position: absolute;
+    left: 20%;
+    top: 115%;
+    width: auto;
+  }
+
+  .Search.active {
+    width: calc(100% - 130px); /* Full width when active on mobile */
+  }
+
+  .Search button {
+    width: auto;
+  }
+
+  .LogReg {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+    position: absolute;
+    top: 30%;
+    left: 86%;
+  }
+  .dark-mode-toggle {
+    position: absolute;
+    top: 38%;
+    left: 58%;
+  }
+  .login,
+  .Register {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* Hamburger menu styles */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: relative;
+    top: 25%;
+    right: 6%;
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: transform 0.3s;
+  }
+
+  .menu-toggle:hover .bar {
+    transform: scale(1.1);
+  }
+  .logo {
+    width: auto;
+    height: auto;
+  }
+}

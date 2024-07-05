@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif KR", serif !important;
+}
+.App {
+  width: 1920px;
+  height: auto;
+}
+
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #1e1e1e;
+  --link-hover-color: #ffb100;
+  --search-bg-color: #fff;
+  --search-button-bg-color: #ffb100;
+  --search-button-hover-bg-color: #e09e00;
+  --button-bg-color: transparent;
+  --title-color: rgb(245, 134, 134);
+  --form-color: white;
+}
+
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --link-color: #e0e0e0;
+  --link-hover-color: #ffb100;
+  --search-bg-color: #333;
+  --search-button-bg-color: #ffb100;
+  --search-button-hover-bg-color: #e09e00;
+  --button-bg-color: #333;
+  --title-color: rgb(248, 54, 54);
+  --form-color: #aa8453;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+fieldset {
+  border: none;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
